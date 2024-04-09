@@ -63,45 +63,45 @@ function playGame() {
             computerScore += 1;
         }
     }
-
-    function getComputerChoice() {
-        let randomNumber = Math.floor(Math.random() * 3)
-        if (randomNumber === 0) {
-            return "Rock";
-        } else if (randomNumber === 1) {
-            return "Paper";
-        } else if (randomNumber === 2) {
-            return "Scissors";
-        }
-    }
-
-    function playRound(playerSelection, computerSelection) {
-        let playerChoice = playerSelection.toLowerCase();
-        let computerChoice = computerSelection.toLowerCase();    
-        if (playerChoice === "rock" && computerChoice === "scissors") {
-            result = "Player wins.";
-        } else if (playerChoice === "scissors" && computerChoice === "paper") {
-            result = "Player wins.";
-        } else if (playerChoice === "paper" && computerChoice === "rock") {
-            result = "Player wins.";
-        } else if (playerChoice === "rock" && computerChoice === "paper") {
-            result = "Computer wins.";
-        } else if (playerChoice === "paper" && computerChoice === "scissors") {
-            result = "Computer wins.";
-        } else if (playerChoice === "scissors" && computerChoice === "rock") {
-            result = "Computer wins.";
-        } else if (playerChoice = computerChoice) {
-            result = "Draw.";
-        }
-    }
-
-    function finalResult() {
+    function getFinalResult() {
         if (playerScore > computerScore) {
             return "Well done! You're the winner!"
         } else if (computerScore > playerScore) {
             return "You lost! Better luck next time!"
         } return "It's a draw!"
     }
-    console.log(finalResult());
+    console.log(getFinalResult());
 }
+
+function getComputerChoice() {
+    let randomNumber = Math.floor(Math.random() * 3)
+    if (randomNumber === 0) {
+        return "Rock";
+    } else if (randomNumber === 1) {
+        return "Paper";
+    } else if (randomNumber === 2) {
+        return "Scissors";
+    }
+}
+
+function playRound(playerSelection, computerSelection) {
+    let playerChoice = playerSelection.toLowerCase();
+    let computerChoice = computerSelection.toLowerCase();    
+    if (playerChoice === "rock" && computerChoice === "scissors") {
+        result = "Player wins.";
+    } else if (playerChoice === "scissors" && computerChoice === "paper") {
+        result = "Player wins.";
+    } else if (playerChoice === "paper" && computerChoice === "rock") {
+        result = "Player wins.";
+    } else if (playerChoice === "rock" && computerChoice === "paper") {
+        result = "Computer wins.";
+    } else if (playerChoice === "paper" && computerChoice === "scissors") {
+        result = "Computer wins.";
+    } else if (playerChoice === "scissors" && computerChoice === "rock") {
+        result = "Computer wins.";
+    } else if (playerChoice = computerChoice) {
+        result = "Draw.";
+    }
+}
+
 playGame();
